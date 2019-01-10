@@ -20,9 +20,12 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
+//the syntax for destructuring is "var {} = *object name*"
 
-//Code Here
-
+var {color} = carDetails;
+var {make} = carDetails;
+var {model} = carDetails;
+var {year} = carDetails;
 
 
 ////////// PROBLEM 2 //////////
@@ -34,7 +37,9 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  var {firstName} = obj;
+  var {lastName} = obj;
+  var {title} = obj;
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -53,7 +58,13 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation (obj) { //this is a function called Total Population that takes in an object
+  var {utah} = obj;
+  var {california} = obj;
+  var {texas} = obj;
+  var {arizona} = obj;
+  return utah + california + texas + arizona
+}
 
 
 
@@ -67,7 +78,14 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients (obj){ //here we've created a function called ingredients and we are taking in an object
+  var {carb} = obj; // here we are assigning the variable "carb" to the obj
+  var {fat} = obj;
+  var {protein} = obj;
+  var arr =[]; //here we are creating a new empty array
+  arr.push(carb, fat, protein) //here we are pushing to the empty array, three variables
+  return arr; // here we are returning the array
+}
 
 
 
@@ -85,8 +103,14 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
-
+function largeNumbers ({first, second, third}){
+    if (first < second && first < third){ // if first is less than second &&/and first is less that first --> return first
+      return first;
+    } else if ( second < first && second < third) {
+      return second;
+    }
+    return third;
+  }
 
 
 ////////// PROBLEM 6 //////////
@@ -97,6 +121,13 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
+function numberGroups ({a,b,c}){
+  if ( a.length > b.length && a.length > c.length ){
+    return a;
+} else if ( b.length > a.length && b.length > c.length ) {
+    return b;
+}  return c;
+}
 
+  
 
